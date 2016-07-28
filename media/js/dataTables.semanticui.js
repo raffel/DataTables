@@ -199,7 +199,13 @@ $(document).on( 'init.dt', function (e, ctx) {
 	if ( $.fn.dropdown ) {
 		var api = new $.fn.dataTable.Api( ctx );
 
-		$( 'div.dataTables_length select', api.table().container() ).dropdown();
+		$( 'div.dataTables_length', api.table().container() ).dropdown({
+      onChange: function(value) {
+        if (value) {
+          api.page.len(value).draw();
+        }
+      }
+    });
 	}
 } );
 

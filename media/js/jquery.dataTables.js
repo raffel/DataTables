@@ -4788,8 +4788,25 @@
 			d2       = $.isArray( menu[0] ),
 			lengths  = d2 ? menu[0] : menu,
 			language = d2 ? menu[1] : menu;
+
+    // FIXME quick hack
+    // see https://datatables.net/forums/discussion/33814/semantic-ui-integration
+    var div =
+    '<div><div class="dataTables_length ui inline dropdown" tabindex="0">' +
+    '<div class="text">10</div>' +
+    '<i class="dropdown icon"></i>' +
+    '<div class="menu" tabindex="-1">' +
+    '<div class="item active selected" data-value="10">10</div>' +
+    '<div class="item" data-value="25">25</div>' +
+    '<div class="item" data-value="50">50</div>' +
+    '<div class="item" data-value="100">100</div>' +
+    '</div></div>' +
+    '<span>Einträge anzeigen</span></div>';
+
+    return $(div)[0];
+
 	
-		var select = $('<select/>', {
+		var select = $('<div/>', {
 			'name':          tableId+'_length',
 			'aria-controls': tableId,
 			'class':         classes.sLengthSelect
