@@ -48,7 +48,7 @@ $.extend( true, DataTable.defaults, {
 	dom:
 		"<'ui grid'"+
 			"<'row'"+
-				"<'eight wide column'l>"+
+				"<'middle aligned eight wide column'l>"+
 				"<'right aligned eight wide column'f>"+
 			">"+
 			"<'row dt-table'"+

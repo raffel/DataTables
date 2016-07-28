@@ -4160,18 +4160,19 @@
 		var language = settings.oLanguage;
 		var previousSearch = settings.oPreviousSearch;
 		var features = settings.aanFeatures;
-		var input = '<input type="search" class="'+classes.sFilterInput+'"/>';
+    // FIXME quick hack
+		var input = '<i class="search icon"></i><input type="search" class="'+classes.sFilterInput+'"/>';
 	
-		var str = language.sSearch;
-		str = str.match(/_INPUT_/) ?
-			str.replace('_INPUT_', input) :
-			str+input;
+		// var str = language.sSearch;
+		// str = str.match(/_INPUT_/) ?
+		// 	str.replace('_INPUT_', input) :
+		// 	str+input;
 	
 		var filter = $('<div/>', {
 				'id': ! features.f ? tableId+'_filter' : null,
-				'class': classes.sFilter
+				'class': classes.sFilter + " icon"
 			} )
-			.append( $('<label/>' ).append( str ) );
+			.append( input );
 	
 		var searchFn = function() {
 			/* Update all other filter input elements for the new display */
